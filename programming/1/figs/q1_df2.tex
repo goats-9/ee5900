@@ -1,0 +1,24 @@
+\begin{dspBlocks}{0.3}{0.3}
+    % first row:
+    \(x[n]\) &          & \BDadd   &        & \BDsplit &%
+             &          & \BDadd   &        & \(y[n]\) \\
+    %
+    % second row:
+             &          &          &          & \BDdelay &%
+             &          &          &          &          \\
+    % third row:
+             &          &          &          & \BDsplit &%
+             &          &          &          &          \\
+    %
+    % connections:
+      \BDConnH{1}{1}{3}{}
+      \ncline{1,3}{1,5}\naput{\(v[n]\)}
+      \BDConnH{1}{5}{8}{\(-a\)}
+      \BDConnH{1}{8}{10}{}
+      \BDConnV{3}{3}{1}{}
+      \BDConnV{1}{5}{2}{}
+      \ncline{2,5}{3,5}
+      \ncline{3,3}{3,5}\nbput{\(a\)}
+      \ncline{3,5}{3,8}
+      \BDConnV{3}{8}{1}{}
+\end{dspBlocks}
